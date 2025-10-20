@@ -86,9 +86,25 @@ Merge Sort was selected as a more complex yet more advantageous algorithm for so
 
 This enhancement was primarily focused on the addition of a new model to mimic a cart-based shopping experience that would include persisted database management for logged in users. 
 
+The reservations page was enhanced to move away from a session-based cart. Information about a given `room` reservation is saved to the database for a given logged in user:
 
+<img src="assets/images/reservations-add-to-cart.png" alt="Reservations page add to cart" width="750">
 
+A user can log out and log back in and still see their persisted cart items at the checkout page:
 
+<img src="assets/images/reservations-full-cart.png" alt="Checkout page with cart items" width="750">
+
+Once a user completes their checkout, their cart is cleared in the backend but the user can liberally continue to engage with the reservation system:
+
+<img src="assets/images/reservations-checkout-complete.png" alt="Checkout page after checkout completed" width="750">
+
+<hr>
+
+### Summary
+
+The artifact intially lacked much of the final functionality seen here. The application lacked proper authentication and initially depended on hard-coded values to give the illusion of a proper login/signup process. There was also no end-to-end functionality for what a user or admin could do within their respective domains. The culmination of all these enhancements resulted in a project where a user could create an account, engage with reservation and checkout mechanisms, and persist their data outside of the current session. Administrative staff could handle users and trip data that is ultimately displayed to the users on the frontend. Altogether the artifact was transformed from a nebulous blob of ideations to a cohesive application that reflects modern practices in standardization and security. 
+
+Breaking changes were identified and resolved within this MVP (minimum viable product) build. Future steps with this project could be to explore proper testing, e.g. unit, component, and integration testing, UI/UX improvements, or even deployment to understand that process itself. The final product here from the enhancements aligns with the set expectations while being cohesive.
 
 
 
