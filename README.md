@@ -66,6 +66,18 @@ And also when a new user tries to create an account with an email that is alread
 
 This enhancement primarily focused on the addition of a search feature for the Admin SPA (single page application) with the implementation of two search algorithms (bubble sort and merge sort).
 
+The initial implementation required seeding the database with 500 randomly generated users to ensure that the application of both algorithms could be compared:
+
+<img src="assets/images/users-unsorted.png" alt="Users without sorting" width="750">
+
+Bubble Sort was selected as a simplistic sort to be implemented to demonstrate basic knowledge of data structures and algorithms:
+
+<img src="assets/images/users-sort-bubble.png" alt="Users with bubble sort" width="750">
+
+Merge Sort was selected as a more complex yet more advantageous algorithm for sorting. Note the time in the console compared to the time for bubble sort:
+
+<img src="assets/images/users-sort-merge.png" alt="Users with merge sort" width="750">
+
 <hr>
 
 ### Databases - Enhancement Three
