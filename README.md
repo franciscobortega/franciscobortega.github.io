@@ -35,6 +35,10 @@ You can watch the code review here: https://youtu.be/WUrsvjuygpY
 
 <hr>
 
+The initial artifact can be found here: https://github.com/franciscobortega/CS465-fullstack/tree/module7-2
+
+The state of the code at this point was passable but did not demonstrate any real-world expectations for quality and security. Most of this implementation was meant to serve an MVP-style model while leaving room for enhancments as the developer saw fit. The following enhancements aimed to make the application feel whole from account creation to reservation checkout while accounting for common edge cases that could crash the application. 
+
 ### Software design and engineering - Enhancement One
 
 > PR: https://github.com/franciscobortega/CS465-fullstack/pull/9
@@ -57,6 +61,33 @@ And also when a new user tries to create an account with an email that is alread
 
 <img src="assets/images/create-account-duplicate-error.png" alt="Failed to create account" width="750">
 
+<details>
+  <summary>Full Length Narrative for Enhancement One</summary>
+
+  1.	Briefly describe the artifact. What is it? When was it created?
+
+The artifact that has been selected for Enhancement One is a full stack application that was created in CS 465 Full Stack Development I. The application was a travel reservation-based system where users could register and sign in to browse and select vacation packages. The application also featured a single page application for admin access that allowed administrative staff to manage travel packages. This project was built on the MEAN stack which includes MongoDB, Express.js, Angular, and Node.js. 
+
+2.	Justify the inclusion of the artifact in your ePortfolio. Why did you select this item? What specific components of the artifact showcase your skills and abilities in software development? How was the artifact improved?
+
+I opted to work on this full stack application because it gave me an opportunity to identify and implement features that I had previously considered interesting to learn and engage with. As a backend developer seeking a full stack role, it also gave me an idea of what that spectrum looks like. The specific components of the artifact that highlight my skills would be the implementation of authentication/authorization for registered users that directly check the database while leveraging JWT tokens and session management. 
+
+The app itself is composed of an app_admin, app_server, and app_api component that all connect. As a developer, I had to be aware of how the form data for a login submission, for example, is sent from the client side to the server side and the exact organization of functions to make the project maintable and adaptable. Sign up and login were originally hardcoded for testing purposes, and the aim of this enhancement was to implement both features such that a user could create their account with a hashed password and log in securely. There were edge cases like existing email that I made sure to gracefully handle and implemented role-based access control to determine what a default user versus admin would have access to. 
+
+The functionality of the application is now well-defined and implemented end-to-end without dependencies on hardcoded or insecure methods. 
+
+3.	Did you meet the course outcomes you planned to meet with this enhancement in Module One? Do you have any updates to your outcome-coverage plans?
+
+I was able to meet two of the three outcomes I had proposed to meet with this enhancement. The fact of the matter was that although this enhancement covered a lot of components of the full stack application, it didn’t really require the use of specific algorithmic principles (Course Outcome 3) as will be covered by Enhancement Two next week. This is not a concern as that course outcome is still appropriately accounted for.
+Enhancement One was a good opportunity to explore the application of techniques and tools that one might leverage in a professional role. (Course Outcome 4) For example, I leveraged Postman to confirm that my API endpoints worked as expected with the MongoDB database before wiring everything up with my front-end code. New features were tested and revised to ensure that the app didn’t crash in unexpected ways. This security mindset (Course Outcome 5) prevents bad code from being pushed for the sake of a solution even for a project like this one that would not see production deployment for users.
+
+4.	Reflect on the process of enhancing and modifying the artifact. What did you learn as you were creating it and improving it? What challenges did you face?
+
+This enhancement was fun and engaging from whiteboarding some ideas to seeing them slowly come together. What I learned most was the importance of testing your functionality for various edge cases. When I had implemented a proper user registration endpoint, I decided to see what would happen if I tried creating another user with the same email address. MongoDB threw an error that crashed the whole app. My initial solution tried handling the error on the server, but this still crashed the app as the response was still bubbling up from the Mongoose ODM. Moving the try-catch logic to the actual code that engaged with MongoDB made it easy to then gracefully handle this specific error. If I had not tested my new code for this and other cases it might not have been resolved until later which could become an issue when working with live applications. Steeping away from the solution and code to think about the problem is a necessary mindset to embrace. 
+
+A key challenge I faced was the organization of code into modular, logical components. I found myself implementing API code in a component that was specifically meant to handle rendering of the client view. While this was feasible, it would have led to spaghetti code that would make collaborating with other developers a nightmare. This is why it is important to document the flow of data so that the same pattern can be followed by others. Other minor challenges were learning how to work with Axios and asynchronous functions, but this was more of a learning curve than a challenge. A full stack project offers plenty of opportunities to touch new technologies and tools. That was a fundamental reason for deciding to pursue all the enhancements through this single artifact. 
+
+</details>
 
 <hr>
 
@@ -78,6 +109,35 @@ Merge Sort was selected as a more complex yet more advantageous algorithm for so
 
 <img src="assets/images/users-sort-merge.png" alt="Users with merge sort" width="750">
 
+<details>
+  <summary>Full Length Narrative for Enhancement Two</summary>
+
+1.	Briefly describe the artifact. What is it? When was it created?
+
+The artifact that has been selected for Enhancement Two is a full stack application that was created in CS 465 Full Stack Development I and the same artifact that was selected for Enhancement One. The application was a travel reservation-based system where users could register and sign in to browse and select vacation packages. The application also featured a single page application for admin access that allowed administrative staff to manage travel packages. This project was built on the MEAN stack which includes MongoDB, Express.js, Angular, and Node.js. 
+
+2.	Justify the inclusion of the artifact in your ePortfolio. Why did you select this item? What specific components of the artifact showcase your skills and abilities in software development? How was the artifact improved?
+
+I opted to work on this full stack application because it gave me an opportunity to identify and implement features that I had previously considered interesting to learn and engage with. As a backend developer seeking a full stack role, it also gave me an idea of what that spectrum looks like. The specific components of the artifact that highlight my skills would be the implementation of two different algorithms to enhance a search feature of the applicaiton. 
+
+The search feature gave me some additional exposure to MongoDB as I had to provision a collection of users to later apply the search algorithms to. This was accomplished through the use of an existing seeding script that only required setting up some routes and mock data for 500 users. The next focus was to select two algorithms to research and implement. I decided to do bubble sort for a simpler implementation that still accomplished the same goal and merge sort for a bit more of a challenge. These two algorithms also provided an opportunity to visually see why algorithmic design matters. Even with a small sample size, the efficiency of merge sort versus bubble sort was significantly evident. 
+
+The functionality of the application is now well-defined and improved for administrative users. Previously, the Admin Single Page Application was limited in functionality to only interact with Trip data but now admins can see and modify users in a secure manner. This opens the ability for password resets that could be explored from the user perspective as well. 
+
+3.	Did you meet the course outcomes you planned to meet with this enhancement in Module One? Do you have any updates to your outcome-coverage plans?
+
+I was able to meet all of the outcomes I had proposed to meet with this enhancement and an additional one that had already been covered by Enhancement One. This one truly required the use of specific algorithmic principles (Course Outcome 3) so most of the other course outcomes were centered around documentation.
+
+I explored a bit of security (Course Outcome 5) with Enhancement Two as I had to account for how the user data that was being pulled from the database would be presented. For example, we have the hash and salt for a user saved in the database and the response payload would have included this information from the generic database query without specifying what fields we really want. During and after implementation of the two algorithms, I made sure to validate the efficiency for each. This was a very basic logging of the time to sort to the console, but these results were commented to track how significant the difference was for a small-scale application. This documentation of the work and results (Course Outcome 2) ensures that the decision to integrate one over the other can be understood by another developer with practical results. 
+
+4.	Reflect on the process of enhancing and modifying the artifact. What did you learn as you were creating it and improving it? What challenges did you face?
+
+Enhancement Two was a book of work that taught a lot. The original plan was to implement the search feature and then manually improve the algorithm, but I found myself lacking inspiration around this idea. I shifted to implementing some well-documented algorithms instead so that I could sit with the code and understand why efficiency matters. This was also a good opportunity to re-learn some data structures and patterns in design. 
+
+This artifact required walking back through the code to learn basic architecture for a MEAN application. Setting up routes and validating that my logic was correct was probably the most significant challenge as I don’t work too closely with this tech stack, but it was fun. I learned through improvement how much an algorithm matters and how few developers could readily implement a standard algorithm like bubble sort from scratch. High-level languages often provide sorting algorithms that are already optimal. There are performance applications that matter down to the millisecond but for most people this would be negligible. The end of the enhancement opened opportunities for further enhancements.
+
+</details>
+
 <hr>
 
 ### Databases - Enhancement Three
@@ -97,6 +157,35 @@ A user can log out and log back in and still see their persisted cart items at t
 Once a user completes their checkout, their cart is cleared in the backend but the user can liberally continue to engage with the reservation system:
 
 <img src="assets/images/reservations-checkout-complete.png" alt="Checkout page after checkout completed" width="750">
+
+<details>
+  <summary>Full Length Narrative for Enhancement Three</summary>
+
+1.	Briefly describe the artifact. What is it? When was it created?
+
+The artifact that has been selected for Enhancement Three is the same full stack application that was created in CS 465 Full Stack Development I and the same artifact that was selected for the last two enhancements. The application is a travel reservation-based system where users can register and sign in to browse and select vacation packages. The application also features a single page application for admin access that allows administrative staff to manage travel packages. This project was built on the MEAN stack which includes MongoDB, Express.js, Angular, and Node.js. 
+
+2.	Justify the inclusion of the artifact in your ePortfolio. Why did you select this item? What specific components of the artifact showcase your skills and abilities in software development? How was the artifact improved?
+
+I opted to work on this full stack application because it gave me an opportunity to identify and implement features that I had previously considered interesting to learn and engage with. As a backend developer seeking a full stack role, it also gave me an idea of what that role and its associated work and workflow might look like. 
+
+The specific components of the artifact that showcase my skills and abilities in the Database category would the refinement of the enhancement itself to identify a viable feature to implement and how those individual components come together to create a uniform system. As the application became more complex, the significance of clear documentation, naming conventions, and standardization of code became more evident. Some interactions like persisting a user’s cart required interaction with all 3 database models to ensure a streamlined experience for the user.
+
+The was the primary improvement made to the artifact. A new model to represent the types of reservations was made while leveraging the reservation model itself as a “cart” that a logged in user could save and have access to even after logging out from the session. There was a lot of overlap with existing components that made tracking and validating changes more prominent.  
+
+3.	Did you meet the course outcomes you planned to meet with this enhancement in Module One? Do you have any updates to your outcome-coverage plans?
+
+I was able to meet all the outcomes I had proposed to meet with this enhancement and covered various others that had already been met prior. The growing complexity of the application required clear technical communication through code (Course Outcome 1) to ensure that each directory and file was accounted for and understood. It can be hard to follow the data flow of a form submission through to the backend and back to the user but clear commentary makes this feasible. 
+
+This project required coming up with elegant solutions to make the user experience enjoyable without compromising the quality of the code (Course Outcome 4) and truly understanding the tools and techniques used to make something happen. Code is versatile and just because an implementation works in one location doesn’t mean it makes semantic sense. Security is always a consideration (Course Outcome 5) and edge cases that could crash the app were tested to ensure that we only saw what a given user needed to see without exposing any vulnerabilities that might not have been accounted for. 
+
+4.	Reflect on the process of enhancing and modifying the artifact. What did you learn as you were creating it and improving it? What challenges did you face?
+
+Enhancement Three made me realize how significant proper planning is. I spent a large amount of time determining that my initial plan had mostly already been implemented by previous dependencies from earlier enhancements and had to pivot. The final decision was to complete the application end to end by finishing out the reservation and checkout workflow. This would touch on the Database category as new models, seeds, and CRUD operations had to be set up. This iteration required learning a bit more about MongoDB and how a model can be leveraged with other models to create a cohesive experience like that of a logged in user getting their previously saved reservations back without any unintended results like other user data. 
+
+The main challenge for this enhancement was managing the flow of data between components and ensuring that we were properly querying the database for the intended data. There was no significant blockers for the majority of the code apart from the usual suspect of relearning routing. Altogether, the decision to pivot allowed for the completion of the complete application without any odd and distinctly noticeable bugs. Further enhancements could be made to the UI but for now the MVP core functionality has been met and exceeded.
+
+</details>
 
 <hr>
 
