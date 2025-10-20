@@ -41,6 +41,23 @@ You can watch the code review here: https://youtu.be/WUrsvjuygpY
 
 This enhancement was primarly focused on the proper implementation of Authentication/Authorization to fully complete the Login/Signup functionality of the app. The reservation functionality was also implemented in an MVP state. 
 
+Role-based access control (RBAC) was added with a `role` property for newly created accounts. The system defaults to `user` role and will display the following when a user logs in, specifically note the navigation bar:
+
+<img src="assets/images/user-login-view.png" alt="User signin" width="750">
+
+When an Admin logs in, they will see the following in the navigation instead which helps limits access to the administrative SPA:
+
+<img src="assets/images/admin-login-view.png" alt="Admin signin" width="750">
+
+Error handling was added to gracefully handle instances where the username/password combination does not match:
+
+<img src="assets/images/login-error.png" alt="Failed to login" width="750">
+
+And also when a new user tries to create an account with an email that is already used:
+
+<img src="assets/images/create-account-duplicate-error.png" alt="Failed to create account" width="750">
+
+
 <hr>
 
 ### Algorithms and data structure - Enhancement Two
