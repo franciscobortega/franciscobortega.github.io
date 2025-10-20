@@ -37,10 +37,38 @@ You can watch the code review here: https://youtu.be/WUrsvjuygpY
 
 ### Software design and engineering - Enhancement One
 
+> PR: https://github.com/franciscobortega/CS465-fullstack/pull/9
+
+This enhancement was primarly focused on the proper implementation of Authentication/Authorization to fully complete the Login/Signup functionality of the app. The reservation functionality was also implemented in an MVP state. 
+
 <hr>
 
 ### Algorithms and data structure - Enhancement Two
 
+> PR: https://github.com/franciscobortega/CS465-fullstack/pull/10
+
+This enhancement primarily focused on the addition of a search feature for the Admin SPA (single page application) with the implementation of two search algorithms (bubble sort and merge sort).
+
 <hr>
 
 ### Databases - Enhancement Three
+
+> PR: https://github.com/franciscobortega/CS465-fullstack/pull/11
+
+This enhancement was primarily focused on the addition of a new model to mimic a cart-based shopping experience that would include persisted database management for logged in users. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
